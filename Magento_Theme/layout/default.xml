@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+      	<referenceContainer name="header.container" htmlId="header" >
+
+			<referenceContainer name="header.panel.wrapper" htmlClass="header-top">
+				<container htmlTag="div" htmlClass="container">
+					<container htmlTag="div" htmlClass="row">
+						<container name="header.panel.store" htmlTag="div" htmlClass="header-panel-store col-sm-3" before="-">
+							<block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="switch/languages.phtml"/>
+							<block class="Magento\Directory\Block\Currency" name="currency" after="-" template="currency.phtml"/>
+						</container>
+						<container name="header.top.middle" htmlTag="div" htmlClass="col-sm-6">
+							<block class="Magento\Cms\Block\Block" name="slogan">
+								<arguments>
+									<argument name="block_id" xsi:type="string">slogan-title</argument>
+								</arguments>
+							</block>
+						</container>
+						<container name="header.top.right" htmlTag="div" htmlClass="col-sm-3">
+							<block class="\Magento\Framework\View\Element\Template" name="link-login" template='Magento_Theme::link.phtml'>
+							</block>
+						</container>
+					</container>
+				</container>
+			</referenceContainer>
+
+			<referenceContainer name="header-wrapper" htmlClass="header-bottom container" >
+				<container htmlTag="div" htmlClass="row">
+					<container name="header.bottom.left" htmlTag="div" htmlClass="col-sm-3 header-bottom-left" before="-">
+						<block class="Magento\Cms\Block\Block" name="facebook">
+							<arguments>
+								<argument name="block_id" xsi:type="string">facebook</argument>
+							</arguments>
+						</block>
+					</container>
+					<container name="header.bottom.middle" htmlTag="div" htmlClass="col-sm-6 header-bottom-middle">
+					</container>
+
+					<container name="search.wishlist.minicart" htmlTag="div" htmlClass="search-wishlist-minicart col-sm-3" after="-">
+						<block class="Magento\Wishlist\Block\Link" name="wish-list-link">
+							<arguments>
+								<argument name="sortOrder" xsi:type="number">60</argument>
+							</arguments>
+						</block>
+					</container>
+				</container>
+			</referenceContainer>
+		</referenceContainer>
+
+
+		<referenceContainer name="main.content">
+			<container htmlTag="div" htmlClass="container footer-content">
+			<container htmlTag="div" htmlClass="row">
+				<container name="footer.top.middle" htmlTag="div" htmlClass="col-sm-3">
+					<block class="Magento\Cms\Block\Block" name="shipping">
+						<arguments>
+							<argument name="block_id" xsi:type="string">shipping</argument>
+						</arguments>
+					</block>
+				</container>
+
+				<container name="footer.middle" htmlTag="div" htmlClass="col-sm-3">
+					<block class="Magento\Cms\Block\Block" name="support">
+						<arguments>
+							<argument name="block_id" xsi:type="string">support</argument>
+						</arguments>
+					</block>
+				</container>
+
+				<container name="footer.main.middle" htmlTag="div" htmlClass="col-sm-3">
+					<block class="Magento\Cms\Block\Block" name="return">
+						<arguments>
+							<argument name="block_id" xsi:type="string">return</argument>
+						</arguments>
+					</block>
+				</container>
+
+				<container name="footer.bottom.middle" htmlTag="div" htmlClass="col-sm-3">
+					<block class="Magento\Cms\Block\Block" name="payment">
+						<arguments>
+							<argument name="block_id" xsi:type="string">payment</argument>
+						</arguments>
+					</block>
+				</container>
+
+			</container>
+			</container>
+		</referenceContainer>
+
+		<referenceContainer name="footer">
+			<container htmlTag="div" htmlClass="container cop-content">
+			<container htmlTag="div" htmlClass="row">
+				<container name="copy.main.middle" htmlTag="div" htmlClass="col-sm-3">
+				 <block class="Magento\Cms\Block\Block" name="Footer Links Block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_links_block</argument>
+                    </arguments>
+                </block>
+				</container>
+
+				<container name="copyy.main.middle" htmlTag="div" htmlClass="col-sm-3">
+				 <block class="Magento\Cms\Block\Block" name="home">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">home</argument>
+                    </arguments>
+                </block>
+				</container>
+
+				<container name="copyyy.main.middle" htmlTag="div" htmlClass="col-sm-3">
+				 <block class="Magento\Cms\Block\Block" name="information">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">information</argument>
+                    </arguments>
+                </block>
+				</container>
+
+				<container name="quick.main.middle" htmlTag="div" htmlClass="col-sm-3">
+				 <block class="Magento\Cms\Block\Block" name="Quick-link">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">Quick-link</argument>
+                    </arguments>
+                </block>
+				</container>
+
+				<!-- <container name="letter.bottom.middle" htmlTag="div" htmlClass="col-sm-3 letter-bottom-middle"> -->
+			</container>
+			</container>
+		</referenceContainer>
+
+		<!-- <move element="form.subscribe" destination="letter.bottom.middle" after="quick.main.middle" /> -->
+		<referenceBlock name="footer_links" remove="true" />
+		<move element="minicart" destination="search.wishlist.minicart" after="-"/>
+		<move element="top.search" destination="search.wishlist.minicart" before="-"/>
+		<move element="copyright" destination="footer" after="-"/>
+		<move element="logo" destination="header.bottom.middle" before="search.wishlist.minicart"/>
+			<referenceBlock name="top.links" remove="true"/>  
+			<referenceBlock name="skip_to_content" remove="true"/>  
+			<referenceBlock name="report.bugs" remove="true" />
+			<referenceBlock name="reviews.tab" remove="true" />
+			<referenceBlock name="product.review.form" remove="true" />
+			<referenceBlock name="product.info.review" remove="true" />
+			<referenceBlock name="product.info.details" remove="true" />
+		
+    </body>
+</page>
