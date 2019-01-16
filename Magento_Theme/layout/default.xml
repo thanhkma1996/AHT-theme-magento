@@ -55,57 +55,49 @@
 		</referenceContainer>
 
 
-		<referenceContainer name="main.content">
+		<referenceContainer name="footer-container">
 			<container htmlTag="div" htmlClass="container footer-content">
-			<container htmlTag="div" htmlClass="row">
-				<container name="footer.top.middle" htmlTag="div" htmlClass="col-sm-3">
-					<block class="Magento\Cms\Block\Block" name="shipping">
-						<arguments>
-							<argument name="block_id" xsi:type="string">shipping</argument>
-						</arguments>
-					</block>
-				</container>
+				<container htmlTag="div" htmlClass="row">
+					<container name="footer.top.middle" htmlTag="div" htmlClass="col-sm-3">
+						<block class="Magento\Cms\Block\Block" name="shipping">
+							<arguments>
+								<argument name="block_id" xsi:type="string">shipping</argument>
+							</arguments>
+						</block>
+					</container>
 
-				<container name="footer.middle" htmlTag="div" htmlClass="col-sm-3">
-					<block class="Magento\Cms\Block\Block" name="support">
-						<arguments>
-							<argument name="block_id" xsi:type="string">support</argument>
-						</arguments>
-					</block>
-				</container>
+					<container name="footer.middle" htmlTag="div" htmlClass="col-sm-3">
+						<block class="Magento\Cms\Block\Block" name="support">
+							<arguments>
+								<argument name="block_id" xsi:type="string">support</argument>
+							</arguments>
+						</block>
+					</container>
 
-				<container name="footer.main.middle" htmlTag="div" htmlClass="col-sm-3">
-					<block class="Magento\Cms\Block\Block" name="return">
-						<arguments>
-							<argument name="block_id" xsi:type="string">return</argument>
-						</arguments>
-					</block>
-				</container>
+					<container name="footer.main.middle" htmlTag="div" htmlClass="col-sm-3">
+						<block class="Magento\Cms\Block\Block" name="return">
+							<arguments>
+								<argument name="block_id" xsi:type="string">return</argument>
+							</arguments>
+						</block>
+					</container>
 
-				<container name="footer.bottom.middle" htmlTag="div" htmlClass="col-sm-3">
-					<block class="Magento\Cms\Block\Block" name="payment">
-						<arguments>
-							<argument name="block_id" xsi:type="string">payment</argument>
-						</arguments>
-					</block>
-				</container>
+					<container name="footer.bottom.middle" htmlTag="div" htmlClass="col-sm-3">
+						<block class="Magento\Cms\Block\Block" name="payment">
+							<arguments>
+								<argument name="block_id" xsi:type="string">payment</argument>
+							</arguments>
+						</block>
+					</container>
 
-			</container>
+				</container>
 			</container>
 		</referenceContainer>
 
 		<referenceContainer name="footer">
-			<container htmlTag="div" htmlClass="container cop-content">
+			<container htmlTag="div" htmlClass="container-fluid cop-content">
 			<container htmlTag="div" htmlClass="row">
 				<container name="copy.main.middle" htmlTag="div" htmlClass="col-sm-3">
-				 <block class="Magento\Cms\Block\Block" name="Footer Links Block">
-                    <arguments>
-                        <argument name="block_id" xsi:type="string">footer_links_block</argument>
-                    </arguments>
-                </block>
-				</container>
-
-				<container name="copyy.main.middle" htmlTag="div" htmlClass="col-sm-3">
 				 <block class="Magento\Cms\Block\Block" name="home">
                     <arguments>
                         <argument name="block_id" xsi:type="string">home</argument>
@@ -113,7 +105,15 @@
                 </block>
 				</container>
 
-				<container name="copyyy.main.middle" htmlTag="div" htmlClass="col-sm-3">
+				<container name="Categories.main.middle" htmlTag="div" htmlClass="col-sm-2">
+				 <block class="Magento\Cms\Block\Block" name="Categories">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">Categories</argument>
+                    </arguments>
+                </block>
+				</container>
+
+				<container name="infor.main.middle" htmlTag="div" htmlClass="col-sm-2">
 				 <block class="Magento\Cms\Block\Block" name="information">
                     <arguments>
                         <argument name="block_id" xsi:type="string">information</argument>
@@ -121,7 +121,7 @@
                 </block>
 				</container>
 
-				<container name="quick.main.middle" htmlTag="div" htmlClass="col-sm-3">
+				<container name="quick.main.middle" htmlTag="div" htmlClass="col-sm-2">
 				 <block class="Magento\Cms\Block\Block" name="Quick-link">
                     <arguments>
                         <argument name="block_id" xsi:type="string">Quick-link</argument>
@@ -129,16 +129,35 @@
                 </block>
 				</container>
 
-				<!-- <container name="letter.bottom.middle" htmlTag="div" htmlClass="col-sm-3 letter-bottom-middle"> -->
+				<container name="newleter.main.middle" htmlTag="div" htmlClass="col-sm-3">
+				</container>
+
+
 			</container>
 			</container>
 		</referenceContainer>
 
-		<!-- <move element="form.subscribe" destination="letter.bottom.middle" after="quick.main.middle" /> -->
-		<referenceBlock name="footer_links" remove="true" />
+		<referenceContainer name="before.body.end">
+			<container htmlTag="div" htmlClass="container-fluid coppyright-content">
+			<container htmlTag="div" htmlClass="row">
+				<container name="copyright.main.middle" htmlTag="div" htmlClass="col-sm-6">
+				</container>
+
+				<container name="home.main.middle" htmlTag="div" htmlClass="col-sm-6">
+				 <block class="Magento\Cms\Block\Block" name="home-footer">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">home-footer</argument>
+                    </arguments>
+                </block>
+				</container>
+			</container>
+			</container>
+		</referenceContainer>
+
+		 <move element="form.subscribe" destination="newleter.main.middle" after="quick.main.middle"/>
 		<move element="minicart" destination="search.wishlist.minicart" after="-"/>
 		<move element="top.search" destination="search.wishlist.minicart" before="-"/>
-		<move element="copyright" destination="footer" after="-"/>
+		<move element="copyright" destination="copyright.main.middle" before="-"/>
 		<move element="logo" destination="header.bottom.middle" before="search.wishlist.minicart"/>
 			<referenceBlock name="top.links" remove="true"/>  
 			<referenceBlock name="skip_to_content" remove="true"/>  
@@ -147,6 +166,7 @@
 			<referenceBlock name="product.review.form" remove="true" />
 			<referenceBlock name="product.info.review" remove="true" />
 			<referenceBlock name="product.info.details" remove="true" />
+			<referenceBlock name="footer_links" remove="true" />
 		
     </body>
 </page>
