@@ -55,7 +55,7 @@
 		</referenceContainer>
 
 
-		<referenceContainer name="footer-container">
+		<referenceContainer name="main.content">
 			<container htmlTag="div" htmlClass="container footer-content">
 				<container htmlTag="div" htmlClass="row">
 					<container name="footer.top.middle" htmlTag="div" htmlClass="col-sm-3">

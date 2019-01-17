@@ -12,7 +12,7 @@
 <li class="block-wishlist" data-bind="scope: 'wishlist'">
     <a <?= /* @noEscape */ $block->getLinkAttributes() ?>>
         <!-- ko if: wishlist().counter -->
-        <i class="fa fa-gratipay fa-2x"></i>
+        <span class="fa fa-gratipay fa-2x"></span>
         <span data-bind="text: wishlist().counter" class="counter qty"></span>
         <!-- /ko -->
     </a>

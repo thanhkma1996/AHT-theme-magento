@@ -13,8 +13,8 @@
 		<css src="css/fontawesome/font-awesome.css" media="all" />
 		<css src="css/fontawesome/all.css" />
 		<css src="css/bootstrap.min.css" />
-         <css src="css/owl.carousel.css" />
-         <css src="css/owl.theme.css" />
         <script src="js/bootstrap.min.js"/>
+         <css src="css/owl.carousel.css" />
+         <css src="css/owl.theme.default.css" />
     </head>
 </page>

@@ -1,8 +1,15 @@
 var config = {
     map: {
-        '*': {
-            'cookiecode/jquery':        'js/jquery-1.9.1',
-            'owlcarousel':              'js/owl-carousel/owlcarousel'
-        }
-    }
-};
+          "*": {
+              "owlslider": "js/owlcarousel/owl.carousel.min"
+          }
+      },
+      paths:  {
+          "owlslider" : "js/owlcarousel/owl.carousel.min"    
+      },
+      "shim": {
+    "js/owlcarousel/owl.carousel.min": ["jquery"],
+   }
+ 
+    
+  };
