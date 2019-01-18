@@ -59,7 +59,7 @@ switch ($type = $block->getType()) {
             $class = $type;
 
             $image = 'upsell_products_list';
-            $title = __('You May Be like');
+            $title = __('You may also like');
             $items = $block->getAllItems();
             $limit = $block->getPositionLimit();
             $shuffle = (int) $block->isShuffled();
@@ -79,7 +79,7 @@ switch ($type = $block->getType()) {
             $class = $type;
 
             $image = 'upsell_products_list';
-            $title = __('You May Be like');
+            $title = __('You may also like');
             $items = $block->getItemCollection()->getItems();
             $limit = $block->getItemLimit('upsell');
             $shuffle = 0;
@@ -159,6 +159,7 @@ switch ($type = $block->getType()) {
     <?php if ($type == 'related') { ?>
         <div class="block-title title">
             <strong id="block-<?= /* @escapeNotVerified */ $class ?>-heading" role="heading" aria-level="2"><?= /* @escapeNotVerified */ $title ?></strong>
+            <p class="upsellproduct">Top seller in the week</p>
         </div>          
         <div id="relateditem_carousel"  class="products list items product-items owl-carousel owl-theme">           
             <?php $iterator = 1; ?>
@@ -243,6 +244,7 @@ switch ($type = $block->getType()) {
         <!--Start upsell products  Code-->
         <div class="block-title title">
             <strong id="block-<?= /* @escapeNotVerified */ $class ?>-heading" role="heading" aria-level="2"><?= /* @escapeNotVerified */ $title ?> </strong>
+            <p class="upsellproduct">Top seller in the week</p>
         </div>
         <div id="upsellitem_carousel"  class="products list items product-items owl-carousel owl-theme">            
             <?php $iterator = 1; ?>

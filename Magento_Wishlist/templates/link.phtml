@@ -8,16 +8,12 @@
 
 /* @var \Magento\Wishlist\Block\Link $block */
 ?>
-
-<li class="block-wishlist" data-bind="scope: 'wishlist'">
-    <a <?= /* @noEscape */ $block->getLinkAttributes() ?>>
-        <!-- ko if: wishlist().counter -->
-        <span class="fa fa-gratipay fa-2x"></span>
+<li class="link wishlist" data-bind="scope: 'wishlist'">
+    <a class="fa fa-heart fa-2x" <?= /* @noEscape */ $block->getLinkAttributes() ?>
         <span data-bind="text: wishlist().counter" class="counter qty"></span>
         <!-- /ko -->
     </a>
 </li>
-
 <script type="text/x-magento-init">
     {
         "*": {
