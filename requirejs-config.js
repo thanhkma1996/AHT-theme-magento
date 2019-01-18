@@ -10,6 +10,8 @@ var config = {
       "shim": {
     "js/owlcarousel/owl.carousel.min": ["jquery"],
    }
- 
+   // deps: [
+   //        "Magento_Theme/js/legends",
+   //    ]
     
   };
